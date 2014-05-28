@@ -78,8 +78,8 @@ describe('Discovery', function() {
       });
   });
 
-  it('should cache discovery metadata should be stored in the configurable '
-    + 'cache directory', function(done) {
+  it('should cache discovery metadata should be stored in the configurable ' +
+        'cache directory', function(done) {
     var customPath = './b041042364d89046c003ca151a6254ef';
     new googleapis.GoogleApis()
       .discover('orkut', 'v2')
@@ -98,7 +98,7 @@ describe('Discovery', function() {
       .execute(function(err, client) {
         var req = client.newBatchRequest();
         assert.equal('foo', req.authClient.credentials);
-        req = client.drive.newRequest();
+        req = client.drive.files.insert();
         assert.equal('foo', req.authClient.credentials);
         req = client.plus.newRequest();
         assert.equal('foo', req.authClient.credentials);
